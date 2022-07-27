@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class e5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a=0,b=0;
+        int a=4,b=0,min = 0;
         do {
             System.out.print("Input size array [x][y], x: ");
             a = scanner.nextInt();
@@ -18,13 +18,13 @@ public class e5 {
         }while (a < 0 || b < 0);
 
         int[][] arr = new int[a][b];
-        int min = arr[0][0];
         int indexIMin = 0,indexJMin = 0;
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
-                System.out.print("input Value in Array["+i+"]["+j+"] :");
-                arr[i][j]=scanner.nextInt();
-                if (arr[i][j]<min){
+//                System.out.print("input Value in Array["+i+"]["+j+"] :");
+//                arr[i][j]=scanner.nextInt();
+
+                if (arr[i][j]>min){
                     min = arr[i][j];
                     indexIMin = i;
                     indexJMin = j;
@@ -33,6 +33,7 @@ public class e5 {
 
         }
 
-        System.out.println("Min Value: "+min+" in Arr["+indexIMin+"]["+indexJMin+"]");
+        System.out.println("Min Value: "+min+" in Array["+indexIMin+"]["+indexJMin+"]");
+
     }
 }
