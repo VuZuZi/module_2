@@ -1,0 +1,8 @@
+package ss7_new_abstract_class_and_interface.exersice.E1_Animal_And_Interface_Edible;
+
+public class Orange extends Fruit{
+    @Override
+    public String howToEat() {
+        return "cam rat ngot";
+    }
+}
