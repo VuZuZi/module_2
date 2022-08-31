@@ -59,13 +59,16 @@ public class DanhSachSinhVien {
     //7. tìm sinh viên theo tên
 
     public void timTheoTen(String name){
+        boolean check = false;
         for (SinhVien sinhvien: danhSach
              ) {
             if (sinhvien.getHoVaTen().indexOf(name)>=0){
                 System.out.println(sinhvien);
-            }else {
-                System.out.println("Không tìm thấy! "+name+" trong danh sách sinh viên");
+                check = true;
             }
+        }
+        if (check == false){
+            System.out.println("không tìm thấy sinh viên trong danh sách");
         }
     }
     public void sapXepSinhVienGiamDanTheoDiem(){

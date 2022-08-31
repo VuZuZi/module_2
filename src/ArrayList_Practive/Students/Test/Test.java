@@ -12,8 +12,14 @@ public class Test {
         int luaChon = 0;
         DanhSachSinhVien dssv = new DanhSachSinhVien();
         int idCheck;
-
-
+        SinhVien sv1 = new SinhVien(1,"Nguyễn Văn A",6,18);
+        SinhVien sv2 = new SinhVien(2,"Nguyễn Văn B",8,17);
+        SinhVien sv3 = new SinhVien(3,"Nguyễn Văn C",5,18);
+        SinhVien sv4 = new SinhVien(4,"Nguyễn Văn D",9,19);
+        dssv.themSinhVien(sv1);
+        dssv.themSinhVien(sv2);
+        dssv.themSinhVien(sv3);
+        dssv.themSinhVien(sv4);
 
         do {
             System.out.println("MENU ------- ");
@@ -71,17 +77,17 @@ public class Test {
                     case 5: //checkID
                         dssv.inDanhSachSinhVien();
                         System.out.print("nhập mà sinh viên cần tìm: ");  idCheck = scanner.nextInt();
-                        SinhVien sv1 = new SinhVien(idCheck);
+                        SinhVien sv5 = new SinhVien(idCheck);
                         scanner.nextLine();
-                        System.out.println("ID: "+idCheck+" có trong danh sách hay không: "+dssv.kiemTraID(sv1));
+                        System.out.println("ID: "+idCheck+" có trong danh sách hay không: "+dssv.kiemTraID(sv5));
 
                         break;
                     case 6: // xóa 1 sinh viên ở trong danh sách
                         dssv.inDanhSachSinhVien();
                         System.out.print("nhập mà ID sinh viên cần xóa: ");  idCheck = scanner.nextInt();
-                        SinhVien sv2 = new SinhVien(idCheck);
+                        SinhVien sv6 = new SinhVien(idCheck);
                         scanner.nextLine();
-                        dssv.xoaSinhVien(sv2);
+                        dssv.xoaSinhVien(sv6);
                         dssv.inDanhSachSinhVien();
                         break;
                     case 7: // tìm sinh viên theo tên
