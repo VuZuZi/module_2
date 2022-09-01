@@ -1,12 +1,15 @@
 package TiTV.Bai_49_String_base;
 
+import java.util.Scanner;
+
 public class p2_Stringpart2 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         String s1 = "Toi la Vu";
         String s2 = "toi la vu";
         String s3 = "Iam is Vu";
 
-        //Hàm equals => so sánh 2 chuỗi giống nhau hay không, phân biệt chữ hoa
+//        Hàm equals => so sánh 2 chuỗi giống nhau hay không, phân biệt chữ hoa
 //        System.out.println("s1 equals s2: "+s1.equals(s2)); //=> false
 
         // Hàm equalsIgnoreCase +> không phân biệt chữ hoa
@@ -23,6 +26,12 @@ public class p2_Stringpart2 {
 //        System.out.println("sv1 compareTo sv3: "+ sv1.compareTo(sv3)); // + +> sv1 > sv2 // sv3 giống sv1 tất cả ký tự nhưng thiếu bắt đầu ở dầu cách cuối cùng " " có mã ascii là 2 => kq 2
 //        System.out.println("sv1 compareTo sv4: "+ sv1.compareTo(sv4)); // 0 +> sv1 = sv2
 
+
+      //Xóa khoảng trắng trong chuỗi
+        String luachon;
+        System.out.print("nhập dãy có dấu cách cần xóa: ");
+        luachon = scanner.nextLine();
+        luachon = luachon.replaceAll(" ", "");
         // Hàm regionMatches => so sánh 1 đoạn trong chuỗi => có phân biệt chữ hoa
         String t1 = "Meo moi";
         String t2 = "con moi";
