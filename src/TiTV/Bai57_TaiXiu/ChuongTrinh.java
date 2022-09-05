@@ -49,21 +49,28 @@ public class ChuongTrinh {
 
         // sau khi nhập thành công thì gán vào tiền của tài khoản
         money = Integer.parseInt(moneyInput);
-        System.out.println("bắt đầu chơi");
+        System.out.println("*** START ***");
+        System.out.println();
 
 
         // lựa chọn đặt cược hay thoát
         String luachon;
         boolean checkLuaChon = true;
         do {
-            System.out.println("1: cược XỈU\n" +
-                    "2: cược TÀI\n" +
-                    "enything to EXIT");
+            if (money == 0){
+                System.out.println("  ☺☺☺ Hết tiền ☺☺☺");
+                System.out.println("☻☻☻ END GAME, OK ☻☻☻");
+                break;
+            }
+            System.out.println("|+-- MENU --+|\n" +
+                    "|+- 1: XỈU -+|\n" +
+                    "|+- 2: TÀI -+|\n" +
+                    "|+-- EXIT --+|");
             System.out.print("nhập lựa chọn của bạn: ");
             luachon = scanner.nextLine();
 //            luachon = luachon.replaceAll(" ", "");
             for (int i = 0; i < luachon.length(); i++) {
-                if (luachon.charAt(i) >= '0' && luachon.charAt(i) < '3'){
+                 if (luachon.charAt(i) >= '0' && luachon.charAt(i) < '3'){
                     checkLuaChon = true;
                     int choose = Integer.parseInt(luachon);
                     GameTaiXiu taiXiu = new GameTaiXiu();
@@ -72,7 +79,7 @@ public class ChuongTrinh {
                     int tienCuoc = 0;
                     do {
                         String copyMoney = String.valueOf(money);
-                        System.out.println("Tiền của bạn: "+money);
+                        System.out.println("Tiền của bạn: {$"+money+"}");
                         System.out.print("Nhập tiền cược: ");
                         String tienCuocString = scanner.nextLine();
                         tienCuocString = tienCuocString.replaceAll(" ", "");
@@ -93,19 +100,36 @@ public class ChuongTrinh {
                             checkTienCuoc = false;
                         }
                     }
+
                     while (checkTienCuoc == false) ;
+
                     //****************//
-
-
+                     int tienTam = money-tienCuoc;
+                     System.out.println("tiền còn lại: [$"+tienTam+"]");
+                    if (choose==1){
+                        System.out.println();
+                        System.out.println("                 |* Cược XỈU $"+tienCuoc+" *|");
+                    }else if (choose==2){
+                        System.out.println();
+                        System.out.println("                 |*Cược TÀI $"+tienCuoc+" *|");
+                    }
                     String kq = taiXiu.xucXac();
-                    System.out.println(money);
-                    System.out.println(taiXiu.xucXac());
-                    if (kq.startsWith("Xỉu")&&choose==1){
-                        money+=tienCuoc;
-                        System.out.println("tiền của bạn: "+money);
+
+                    System.out.println("             |* ("+kq+") *|");
+                    if ((kq.startsWith("Xỉu")&&choose==1)||(kq.startsWith("Tài")&&choose==2)){
+                        money+=tienCuoc/100*95;
+                        System.out.println();
+                        System.out.println("    tiền của bạn: {$"+money+"}");
+                        System.out.println();
+                        System.out.println("*** NEW GAME ***");
+                        System.out.println();
                     }else {
                         money-=tienCuoc;
-                        System.out.println("tiền của bạn: "+money);
+                        System.out.println();
+                        System.out.println("    tiền của bạn: {$"+money+"}");
+                        System.out.println();
+                        System.out.println("*** NEW GAME ***");
+                        System.out.println();
                     }
                 }else {
                     System.out.println("EXIT");
@@ -113,6 +137,7 @@ public class ChuongTrinh {
                     break;
                 }
             }
+
         } while (checkLuaChon == true);
 
     }
