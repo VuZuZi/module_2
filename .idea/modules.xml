@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO/CodeLearningFPT/Code.iml" filepath="$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO/CodeLearningFPT/Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO/CodeFPT/CodeFPT.iml" filepath="$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO/CodeFPT/CodeFPT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../TITV_Java/TITV_Code_And_Source/Code_And_Source.iml" filepath="$PROJECT_DIR$/../../../TITV_Java/TITV_Code_And_Source/Code_And_Source.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO_/FPT.iml" filepath="$PROJECT_DIR$/../../../FPT/Chuyên Ngành 2/PRO_/FPT.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_2.iml" filepath="$PROJECT_DIR$/module_2.iml" />
     </modules>
   </component>
